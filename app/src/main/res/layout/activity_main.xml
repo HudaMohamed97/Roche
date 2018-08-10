@@ -9,26 +9,26 @@
     >
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:id="@+id/image"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
         android:layout_gravity="center"
-        />
+        android:layout_margin="10dp"
+        android:src="@drawable/logo" />
 
     <TextView
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="35dp"
         android:gravity="center"
         android:layout_gravity="center_horizontal"
         android:text="Best practices for specimens handling"
-        android:paddingLeft="25dp"
-        android:paddingRight="25dp"
+        android:layout_margin="10dp"
         android:textColor="@android:color/white"
         android:background="@drawable/blue_circular_rectangle_background"
         />
 
 
     <ScrollView
-        android:paddingTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
@@ -36,18 +36,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
             >
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
             android:gravity="center"
+            android:textStyle="bold"
             android:layout_gravity="center_horizontal"
             android:text="Tissue procurement"
-            android:paddingLeft="25dp"
-            android:paddingRight="25dp"
             android:textColor="@android:color/holo_blue_light"
             android:background="@drawable/white_circular_rectangle_background"
             />
@@ -55,8 +53,9 @@
 
             <LinearLayout
                 android:id="@+id/one"
-                android:layout_width="700dp"
-                android:layout_height="40dp"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 >
@@ -72,13 +71,11 @@
 
                 <TextView
                     android:layout_marginLeft="10dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_gravity="center_horizontal"
                     android:text="Tissue specimen labeling"
-                    android:paddingLeft="25dp"
-                    android:paddingRight="25dp"
                     android:textColor="@android:color/white"
                     android:background="@drawable/trans_circular_rectangle_background"
                     />
@@ -87,40 +84,40 @@
 
             <LinearLayout
                 android:id="@+id/two"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 >
+
                 <TextView
                     android:layout_width="45dp"
                     android:layout_height="45dp"
+                    android:background="@drawable/white_circular_rectangle_background"
                     android:gravity="center"
                     android:text="2"
-                    android:textStyle="bold"
                     android:textColor="@android:color/holo_blue_light"
-                    android:background="@drawable/white_circular_rectangle_background"
-                    />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_marginLeft="10dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_gravity="center_horizontal"
                     android:text="Time to fixation"
-                    android:paddingLeft="25dp"
-                    android:paddingRight="25dp"
                     android:textColor="@android:color/white"
                     android:background="@drawable/trans_circular_rectangle_background"
                     />
 
             </LinearLayout>
+
+
             <LinearLayout
                 android:id="@+id/three"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 >
@@ -136,23 +133,22 @@
 
                 <TextView
                     android:layout_marginLeft="10dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_gravity="center_horizontal"
                     android:text="Tissue specimen preparation"
-                    android:paddingLeft="25dp"
-                    android:paddingRight="25dp"
                     android:textColor="@android:color/white"
                     android:background="@drawable/trans_circular_rectangle_background"
                     />
 
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/four"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 >
@@ -168,13 +164,11 @@
 
                 <TextView
                     android:layout_marginLeft="10dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_gravity="center_horizontal"
                     android:text="Tissue specimen handling"
-                    android:paddingLeft="25dp"
-                    android:paddingRight="25dp"
                     android:textColor="@android:color/white"
                     android:background="@drawable/trans_circular_rectangle_background"
                     />
@@ -182,13 +176,13 @@
 
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
                 android:gravity="center"
                 android:layout_gravity="center_horizontal"
                 android:text="Laboratory"
-                android:paddingLeft="25dp"
-                android:paddingRight="25dp"
+                android:textStyle="bold"
                 android:textColor="@android:color/holo_blue_light"
                 android:background="@drawable/white_circular_rectangle_background"
                 />
@@ -196,9 +190,8 @@
 
             <LinearLayout
                 android:id="@+id/five"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 >
@@ -214,13 +207,11 @@
 
                 <TextView
                     android:layout_marginLeft="10dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_gravity="center_horizontal"
                     android:text="Tissue grossing and fixation"
-                    android:paddingLeft="25dp"
-                    android:paddingRight="25dp"
                     android:textColor="@android:color/white"
                     android:background="@drawable/trans_circular_rectangle_background"
                     />
@@ -229,9 +220,9 @@
 
             <LinearLayout
                 android:id="@+id/six"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 >
@@ -247,23 +238,22 @@
 
                 <TextView
                     android:layout_marginLeft="10dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_gravity="center_horizontal"
                     android:text="Duration of fixation"
-                    android:paddingLeft="25dp"
-                    android:paddingRight="25dp"
                     android:textColor="@android:color/white"
                     android:background="@drawable/trans_circular_rectangle_background"
                     />
 
             </LinearLayout>
+
+
             <LinearLayout
                 android:id="@+id/seven"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 >
@@ -279,13 +269,11 @@
 
                 <TextView
                     android:layout_marginLeft="10dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_gravity="center_horizontal"
                     android:text="Tissue processing"
-                    android:paddingLeft="25dp"
-                    android:paddingRight="25dp"
                     android:textColor="@android:color/white"
                     android:background="@drawable/trans_circular_rectangle_background"
                     />
@@ -294,8 +282,9 @@
 
             <LinearLayout
                 android:id="@+id/eight"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
                 android:layout_gravity="center"
                 android:gravity="center">
 
@@ -309,23 +298,20 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/trans_circular_rectangle_background"
                     android:gravity="center"
-                    android:paddingLeft="25dp"
-                    android:paddingRight="25dp"
                     android:text="Microtomy"
                     android:textColor="@android:color/white" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/nine"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:gravity="center">
 
@@ -339,23 +325,21 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/trans_circular_rectangle_background"
                     android:gravity="center"
-                    android:paddingLeft="25dp"
-                    android:paddingRight="25dp"
                     android:text="Slide and block storage"
                     android:textColor="@android:color/white" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/ten"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
                 android:layout_gravity="center"
                 android:gravity="center">
 
@@ -369,14 +353,12 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/trans_circular_rectangle_background"
                     android:gravity="center"
-                    android:paddingLeft="25dp"
-                    android:paddingRight="25dp"
                     android:text="Slide Coverslipping"
                     android:textColor="@android:color/white" />
             </LinearLayout>

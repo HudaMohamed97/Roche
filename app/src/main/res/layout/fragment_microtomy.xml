@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    >
+
+
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:text="Laboratory"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_blue_light"
+        android:background="@drawable/white_circular_rectangle_background"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/eight"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/white_circular_rectangle_background"
+            android:gravity="center"
+            android:text="8"
+            android:textColor="@android:color/holo_blue_light"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/trans_circular_rectangle_background"
+            android:gravity="center"
+            android:text="Microtomy"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/eighta" />
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/eightb" />
+
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/eightc" />
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/eightd" />
+
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/eighte" />
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/eightf" />
+
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/eightg" />
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/eighth" />
+
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/eightj" />
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/eightj" />
+
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/eighti" />
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/eightk" />
+
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/eightl" />
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/eightm" />
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/eightn" />
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/dismiss"
+        android:layout_marginTop="10dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        android:background="@drawable/white_circular_rectangle_background"
+        />
+</LinearLayout>

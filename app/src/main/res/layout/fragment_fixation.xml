@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    >
+
+
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:text="Tissue procurement"
+        android:textColor="@android:color/holo_blue_light"
+        android:background="@drawable/white_circular_rectangle_background"
+        />
+
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/white_circular_rectangle_background"
+            android:gravity="center"
+            android:text="2"
+            android:textColor="@android:color/holo_blue_light"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:text="Time to fixation"
+            android:textColor="@android:color/white"
+            android:background="@drawable/trans_circular_rectangle_background"
+            />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/twp" />
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/two" />
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/twoform" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/dismiss"
+        android:layout_marginTop="10dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        android:background="@drawable/white_circular_rectangle_background"
+        />
+</LinearLayout>
