@@ -5,7 +5,7 @@
     android:gravity="center"
     android:padding="10dp"
     android:orientation="vertical"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/background"
     >
 
 
@@ -16,10 +16,9 @@
         android:layout_margin="10dp"
         android:gravity="center"
         android:layout_gravity="center_horizontal"
-        android:text="Laboratory"
         android:textStyle="bold"
         android:textColor="@android:color/holo_blue_light"
-        android:background="@drawable/white_circular_rectangle_background"
+            android:background="@drawable/laboratory"
         />
 
 
@@ -28,9 +27,11 @@
         android:layout_width="300dp"
         android:layout_height="35dp"
         android:layout_gravity="center"
-        android:gravity="center">
+        android:gravity="center"
+        android:background="@drawable/slide_block_storage"
+        >
 
-        <TextView
+      <!--  <TextView
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:background="@drawable/white_circular_rectangle_background"
@@ -47,7 +48,7 @@
             android:background="@drawable/trans_circular_rectangle_background"
             android:gravity="center"
             android:text="Slide and block storage"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white" />-->
     </LinearLayout>
 
     <ScrollView

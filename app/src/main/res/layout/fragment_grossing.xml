@@ -5,7 +5,7 @@
     android:gravity="center"
     android:padding="10dp"
     android:orientation="vertical"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/background"
     >
 
 
@@ -16,10 +16,9 @@
         android:layout_margin="10dp"
         android:gravity="center"
         android:layout_gravity="center_horizontal"
-        android:text="Laboratory"
         android:textStyle="bold"
         android:textColor="@android:color/holo_blue_light"
-        android:background="@drawable/white_circular_rectangle_background"
+        android:background="@drawable/laboratory"
         />
 
 
@@ -29,8 +28,9 @@
         android:layout_height="35dp"
         android:layout_gravity="center"
         android:gravity="center"
+        android:background="@drawable/tissue_grossing_fixation"
         >
-        <TextView
+       <!-- <TextView
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:gravity="center"
@@ -49,7 +49,7 @@
             android:text="Tissue grossing and fixation"
             android:textColor="@android:color/white"
             android:background="@drawable/trans_circular_rectangle_background"
-            />
+            />-->
 
     </LinearLayout>
 
