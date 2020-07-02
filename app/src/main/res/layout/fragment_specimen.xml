@@ -1,78 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:padding="10dp"
-    android:orientation="vertical"
     android:background="@drawable/background"
+    android:gravity="center"
+    android:orientation="vertical"
     >
-
 
 
     <TextView
         android:layout_width="300dp"
         android:layout_height="35dp"
-        android:layout_margin="10dp"
-        android:gravity="center"
-        android:textStyle="bold"
         android:layout_gravity="center_horizontal"
-        android:textColor="@android:color/holo_blue_light"
+        android:layout_margin="10dp"
         android:background="@drawable/tissue_procurement"
-        />
+        android:gravity="center"
+        android:textColor="@android:color/holo_blue_light"
+        android:textStyle="bold" />
 
 
     <LinearLayout
         android:id="@+id/one"
         android:layout_width="300dp"
         android:layout_height="35dp"
-        android:layout_margin="5dp"
         android:layout_gravity="center"
-        android:gravity="center"
+        android:layout_margin="5dp"
         android:background="@drawable/tissue_specimen_labeling"
-        >
-       <!-- <TextView
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textColor="@android:color/holo_blue_light"
-            android:background="@drawable/white_circular_rectangle_background"
-            />
+        android:gravity="center"
+        android:orientation="horizontal">
+        <!-- <TextView
+             android:layout_width="45dp"
+             android:layout_height="45dp"
+             android:gravity="center"
+             android:text="1"
+             android:textStyle="bold"
+             android:textColor="@android:color/holo_blue_light"
+             android:background="@drawable/white_circular_rectangle_background"
+             />
 
-        <TextView
-            android:layout_marginLeft="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_gravity="center_horizontal"
-            android:text="Tissue specimen labeling"
-            android:textColor="@android:color/white"
-            android:background="@drawable/trans_circular_rectangle_background"
-            />-->
+         <TextView
+             android:layout_marginLeft="10dp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center"
+             android:layout_gravity="center_horizontal"
+             android:text="Tissue specimen labeling"
+             android:textColor="@android:color/white"
+             android:background="@drawable/trans_circular_rectangle_background"
+             />-->
 
     </LinearLayout>
 
-    <ImageView
-        android:scaleType="fitXY"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/one" />
-
-    <ImageView
-        android:scaleType="fitXY"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/oneform" />
-
-    <Button
-        android:id="@+id/dismiss"
-        android:layout_marginTop="5dp"
-
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Done"
-        android:background="@drawable/white_circular_rectangle_background"
-        />
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/radioPAH"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <RadioButton
+                android:id="@+id/Radio1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:buttonTint="@color/colorPrimaryDark"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/Radio2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorPrimaryDark" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="300dp"
+        android:layout_height="380dp"
+        tools:listitem="@layout/recycler_row" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/demo" />
+
+    </LinearLayout>
 </LinearLayout>

@@ -3,9 +3,12 @@ package eg.com.cat.roche;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.View;
 import android.widget.LinearLayout;
+
 
 import eg.com.cat.roche.fragments.Coverslipping;
 import eg.com.cat.roche.fragments.Duration;
@@ -20,7 +23,8 @@ import eg.com.cat.roche.fragments.specimen;
 
 public class MainActivity extends AppCompatActivity {
 
-    LinearLayout one , two , three , four , five , six , seven , eight , nine , ten;
+    LinearLayout one, two, three, four, five, six, seven, eight, nine, ten;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // Make sure this is before calling super.onCreate
@@ -59,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 ft.addToBackStack(null);
                 Fixation dialogFragment = new Fixation();
-                dialogFragment.show(ft, "Fixation");
+                dialogFragment.show(getSupportFragmentManager(), "Fixation");
 
             }
         });

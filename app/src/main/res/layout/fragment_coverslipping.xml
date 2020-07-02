@@ -1,118 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:padding="10dp"
-    android:orientation="vertical"
     android:background="@drawable/background"
-    >
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <TextView
         android:layout_width="300dp"
         android:layout_height="35dp"
-        android:layout_margin="10dp"
-        android:gravity="center"
         android:layout_gravity="center_horizontal"
-        android:textStyle="bold"
-        android:textColor="@android:color/holo_blue_light"
+        android:layout_margin="10dp"
         android:background="@drawable/laboratory"
-        />
+        android:gravity="center"
+        android:textColor="@android:color/holo_blue_light"
+        android:textStyle="bold" />
 
 
     <LinearLayout
         android:id="@+id/ten"
         android:layout_width="300dp"
         android:layout_height="35dp"
-        android:layout_margin="10dp"
         android:layout_gravity="center"
-        android:gravity="center"
+        android:layout_margin="10dp"
         android:background="@drawable/slide_converslipping"
-        >
+        android:gravity="center">
 
-       <!-- <TextView
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:background="@drawable/white_circular_rectangle_background"
-            android:gravity="center"
-            android:text="10"
-            android:textColor="@android:color/holo_blue_light"
-            android:textStyle="bold" />
+        <!-- <TextView
+             android:layout_width="45dp"
+             android:layout_height="45dp"
+             android:background="@drawable/white_circular_rectangle_background"
+             android:gravity="center"
+             android:text="10"
+             android:textColor="@android:color/holo_blue_light"
+             android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/trans_circular_rectangle_background"
-            android:gravity="center"
-            android:text="Slide Coverslipping"
-            android:textColor="@android:color/white" />-->
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_gravity="center_horizontal"
+             android:layout_marginLeft="10dp"
+             android:background="@drawable/trans_circular_rectangle_background"
+             android:gravity="center"
+             android:text="Slide Coverslipping"
+             android:textColor="@android:color/white" />-->
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="500dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
-
-            <ImageView
-                android:layout_marginTop="10dp"
-                android:scaleType="fitXY"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ten" />
-
-            <ImageView
-                android:scaleType="fitXY"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/tena" />
-
-
-            <ImageView
-                android:layout_marginTop="10dp"
-                android:scaleType="fitXY"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/tenb" />
-
-            <ImageView
-                android:scaleType="fitXY"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/tenc" />
-
-
-            <ImageView
-                android:layout_marginTop="10dp"
-                android:scaleType="fitXY"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/tend" />
-
-            <ImageView
-                android:layout_marginTop="10dp"
-                android:scaleType="fitXY"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/tenf" />
-
-
-        </LinearLayout>
-
-    </ScrollView>
-
-    <Button
-        android:id="@+id/dismiss"
-        android:layout_marginTop="5dp"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Done"
-        android:background="@drawable/white_circular_rectangle_background"
-        />
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/radioPAH"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <RadioButton
+                android:id="@+id/Radio1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:buttonTint="@color/colorPrimaryDark"
+                android:checked="true" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="300dp"
+        android:layout_height="350dp"
+        tools:listitem="@layout/recycler_row" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/demo" />
+
+        <ImageButton
+            android:id="@+id/readMore"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/readmore"
+            android:text="show More"
+            android:visibility="visible" />
+
+
+    </LinearLayout>
 </LinearLayout>
