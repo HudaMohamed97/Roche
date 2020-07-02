@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,15 +31,18 @@ public class BottomSheet extends BottomSheetDialogFragment {
 
 
     @Override
-    public View onCreateView( LayoutInflater inflater,  ViewGroup container,
-                              Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         return inflater.inflate(R.layout.bottom_sheet, container, false);
     }
 
     @Override
-    public void onViewCreated( View view,  Bundle savedInstanceState) {
+    public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initRecyclerView(view);
+        Button exist = view.findViewById(R.id.exist);
+        exist.setOnClickListener(view1 -> super.dismiss());
+
 
     }
 
@@ -46,7 +52,6 @@ public class BottomSheet extends BottomSheetDialogFragment {
         adapter = new AdapterSheet(getActivity(), picList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
-
     }
 
 }

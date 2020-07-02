@@ -1,9 +1,11 @@
 package eg.com.cat.roche.fragments;
 
-import android.app.DialogFragment;
 import android.os.Bundle;
+
+import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +16,11 @@ import java.util.ArrayList;
 
 import eg.com.cat.roche.R;
 
-public class Preparation extends DialogFragment {
+public class Preparation extends DialogFragment implements Adapter2.ItemClickListener {
     Adapter2 adapter;
     ArrayList<Integer> picList = new ArrayList<>();
+    ArrayList<Integer> picList2 = new ArrayList<>();
+    ArrayList<Integer> picList3 = new ArrayList<>();
     ImageButton readMore;
 
     @Override
@@ -46,7 +50,17 @@ public class Preparation extends DialogFragment {
             }
         });
 
-        readMore = (ImageButton) rootView.findViewById(R.id.button);
+        readMore = (ImageButton) rootView.findViewById(R.id.readMore);
+        readMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                picList2.add(R.drawable.sec3inner1);
+                BottomSheet addPhotoBottomDialogFragment = new BottomSheet(picList2);
+                if (getFragmentManager() != null) {
+                    addPhotoBottomDialogFragment.show(getFragmentManager(), "");
+                }
+            }
+        });
         return rootView;
     }
 
@@ -56,7 +70,7 @@ public class Preparation extends DialogFragment {
         picList.clear();
         picList.add(R.drawable.section3pic1);
         picList.add(R.drawable.section3pic12);
-        adapter = new Adapter2(getActivity(), picList);
+        adapter = new Adapter2(this,getActivity(), picList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
@@ -68,4 +82,16 @@ public class Preparation extends DialogFragment {
         super.onCreate(savedInstanceState);
     }
 
+    @Override
+    public void onItemClick(View view, int position) {
+        picList3.clear();
+        picList3.add(R.drawable.ref1);
+        picList3.add(R.drawable.ref2);
+        ShowMoreSheet addPhotoBottomDialogFragment = new ShowMoreSheet(picList3);
+        if (getFragmentManager() != null) {
+            addPhotoBottomDialogFragment.show(getFragmentManager(), "");
+        }
+
+
+    }
 }

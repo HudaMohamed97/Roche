@@ -115,7 +115,7 @@
             android:layout_marginLeft="20dp"
             android:background="@drawable/readmore"
             android:text="show More"
-            android:visibility="visible" />
+            android:visibility="gone" />
 
 
     </LinearLayout>

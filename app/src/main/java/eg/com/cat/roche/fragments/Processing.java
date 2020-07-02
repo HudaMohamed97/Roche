@@ -1,9 +1,11 @@
 package eg.com.cat.roche.fragments;
 
-import android.app.DialogFragment;
 import android.os.Bundle;
+
+import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,10 +16,13 @@ import java.util.ArrayList;
 
 import eg.com.cat.roche.R;
 
-public class Processing extends DialogFragment {
+public class Processing extends DialogFragment implements Adapter2.ItemClickListener {
     Adapter2 adapter;
     ArrayList<Integer> picList = new ArrayList<>();
+    ArrayList<Integer> picList2 = new ArrayList<>();
+    ArrayList<Integer> picList3 = new ArrayList<>();
     ImageButton readMore;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_processing, container, false);
@@ -42,7 +47,7 @@ public class Processing extends DialogFragment {
                         adapter.notifyDataSetChanged();
                         break;
                     case R.id.Radio3:
-                        readMore.setVisibility(View.VISIBLE);
+                        readMore.setVisibility(View.GONE);
                         picList.clear();
                         picList.add(R.drawable.section7pic31);
                         picList.add(R.drawable.section7pic32);
@@ -58,15 +63,28 @@ public class Processing extends DialogFragment {
                 }
             }
         });
-        readMore = (ImageButton) rootView.findViewById(R.id.readMore);
+        readMore = rootView.findViewById(R.id.readMore);
         readMore.setVisibility(View.GONE);
         readMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dismiss();
+                picList2.add(R.drawable.sec7inner1);
+                picList2.add(R.drawable.sec7inner2);
+                picList2.add(R.drawable.sec7inner3);
+                picList2.add(R.drawable.sec7inner4);
+                picList2.add(R.drawable.sec7inner5);
+                picList2.add(R.drawable.sec7inner6);
+                picList2.add(R.drawable.sec7inner7);
+                picList2.add(R.drawable.sec7inner8);
+                picList2.add(R.drawable.sec7inner9);
+                picList2.add(R.drawable.sec7inner10);
+                picList2.add(R.drawable.sec7inner11);
+                BottomSheet addPhotoBottomDialogFragment = new BottomSheet(picList2);
+                if (getFragmentManager() != null) {
+                    addPhotoBottomDialogFragment.show(getFragmentManager(), "");
+                }
             }
         });
-
 
 
         return rootView;
@@ -80,7 +98,7 @@ public class Processing extends DialogFragment {
         picList.add(R.drawable.section6pic11);
         picList.add(R.drawable.section6pic12);
         picList.add(R.drawable.section6pic13);
-        adapter = new Adapter2(getActivity(), picList);
+        adapter = new Adapter2(this,getActivity(), picList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
@@ -92,5 +110,16 @@ public class Processing extends DialogFragment {
         super.onCreate(savedInstanceState);
     }
 
+    @Override
+    public void onItemClick(View view, int position) {
+        picList3.clear();
+        picList3.add(R.drawable.ref1);
+        picList3.add(R.drawable.ref2);
+        ShowMoreSheet addPhotoBottomDialogFragment = new ShowMoreSheet(picList3);
+        if (getFragmentManager() != null) {
+            addPhotoBottomDialogFragment.show(getFragmentManager(), "");
+        }
+
+    }
 }
 

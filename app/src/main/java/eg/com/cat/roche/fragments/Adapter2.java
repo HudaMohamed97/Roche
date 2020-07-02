@@ -1,7 +1,9 @@
 package eg.com.cat.roche.fragments;
 
 import android.content.Context;
+
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,9 +20,10 @@ public class Adapter2 extends RecyclerView.Adapter<Adapter2.ViewHolder> {
     private ItemClickListener mClickListener;
 
     // data is passed into the constructor
-    Adapter2(Context context, List<Integer> data) {
+    Adapter2(ItemClickListener mClickListener, Context context, List<Integer> data) {
         this.mInflater = LayoutInflater.from(context);
         this.mData = data;
+        this.mClickListener = mClickListener;
     }
 
     // inflates the row layout from xml when needed
@@ -45,7 +48,7 @@ public class Adapter2 extends RecyclerView.Adapter<Adapter2.ViewHolder> {
 
 
     // stores and recycles views as they are scrolled off screen
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
 
         ViewHolder(View itemView) {
@@ -54,16 +57,12 @@ public class Adapter2 extends RecyclerView.Adapter<Adapter2.ViewHolder> {
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    mClickListener.onItemClick(view, getPosition());
                 }
             });
-            itemView.setOnClickListener(this);
+
         }
 
-        @Override
-        public void onClick(View view) {
-            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
-        }
     }
 
     // convenience method for getting data at click position

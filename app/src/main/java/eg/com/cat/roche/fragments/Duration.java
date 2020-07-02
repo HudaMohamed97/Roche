@@ -1,9 +1,11 @@
 package eg.com.cat.roche.fragments;
 
-import android.app.DialogFragment;
 import android.os.Bundle;
+
+import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +16,11 @@ import java.util.ArrayList;
 
 import eg.com.cat.roche.R;
 
-public class Duration extends DialogFragment {
+public class Duration extends DialogFragment implements Adapter2.ItemClickListener {
     Adapter2 adapter;
+    ArrayList<Integer> picList2 = new ArrayList<>();
     ArrayList<Integer> picList = new ArrayList<>();
+    ArrayList<Integer> picList3 = new ArrayList<>();
     ImageButton readMore;
 
     @Override
@@ -37,7 +41,7 @@ public class Duration extends DialogFragment {
                         adapter.notifyDataSetChanged();
                         break;
                     case R.id.Radio2:
-                        readMore.setVisibility(View.GONE);
+                        readMore.setVisibility(View.VISIBLE);
                         picList.clear();
                         picList.add(R.drawable.section6pic21);
                         picList.add(R.drawable.section6pic22);
@@ -51,7 +55,12 @@ public class Duration extends DialogFragment {
         readMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dismiss();
+                picList2.add(R.drawable.sec6inner1);
+                picList2.add(R.drawable.sec6inner2);
+                BottomSheet addPhotoBottomDialogFragment = new BottomSheet(picList2);
+                if (getFragmentManager() != null) {
+                    addPhotoBottomDialogFragment.show(getFragmentManager(), "");
+                }
             }
         });
         return rootView;
@@ -64,7 +73,7 @@ public class Duration extends DialogFragment {
         picList.add(R.drawable.section6pic11);
         picList.add(R.drawable.section6pic12);
         picList.add(R.drawable.section6pic13);
-        adapter = new Adapter2(getActivity(), picList);
+        adapter = new Adapter2(this,getActivity(), picList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
@@ -76,5 +85,17 @@ public class Duration extends DialogFragment {
         super.onCreate(savedInstanceState);
     }
 
+    @Override
+    public void onItemClick(View view, int position) {
+        picList3.clear();
+        picList3.add(R.drawable.ref1);
+        picList3.add(R.drawable.ref2);
+        ShowMoreSheet addPhotoBottomDialogFragment = new ShowMoreSheet(picList3);
+        if (getFragmentManager() != null) {
+            addPhotoBottomDialogFragment.show(getFragmentManager(), "");
+        }
+
+
+    }
 }
 

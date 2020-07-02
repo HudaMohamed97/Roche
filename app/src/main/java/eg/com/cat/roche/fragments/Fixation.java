@@ -15,9 +15,11 @@ import java.util.ArrayList;
 
 import eg.com.cat.roche.R;
 
-public class Fixation extends DialogFragment {
+public class Fixation extends DialogFragment implements Adapter2.ItemClickListener {
     Adapter2 adapter;
     ArrayList<Integer> picList = new ArrayList<>();
+    ArrayList<Integer> picList2 = new ArrayList<>();
+    ArrayList<Integer> picList3 = new ArrayList<>();
     ImageButton readMore;
 
     @Override
@@ -57,15 +59,11 @@ public class Fixation extends DialogFragment {
         readMore.setVisibility(View.GONE);
 
         readMore.setOnClickListener(v -> {
-            picList.clear();
-            picList.add(R.drawable.sec5inner1);
-            picList.add(R.drawable.sec5inner2);
-            BottomSheet addPhotoBottomDialogFragment = new BottomSheet(picList);
+            picList2.add(R.drawable.sec4inner1);
+            BottomSheet addPhotoBottomDialogFragment = new BottomSheet(picList2);
             if (getFragmentManager() != null) {
-                addPhotoBottomDialogFragment.show(getFragmentManager(),"");
+                addPhotoBottomDialogFragment.show(getFragmentManager(), "");
             }
-
-
         });
 
         return rootView;
@@ -78,7 +76,7 @@ public class Fixation extends DialogFragment {
         picList.clear();
         picList.add(R.drawable.section2pic1);
         picList.add(R.drawable.section2pic2);
-        adapter = new Adapter2(getActivity(), picList);
+        adapter = new Adapter2(this,getActivity(), picList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
@@ -89,4 +87,16 @@ public class Fixation extends DialogFragment {
         super.onCreate(savedInstanceState);
     }
 
+    @Override
+    public void onItemClick(View view, int position) {
+        picList3.clear();
+        picList3.add(R.drawable.ref1);
+        picList3.add(R.drawable.ref2);
+        ShowMoreSheet addPhotoBottomDialogFragment = new ShowMoreSheet(picList3);
+        if (getFragmentManager() != null) {
+            addPhotoBottomDialogFragment.show(getFragmentManager(), "");
+        }
+
+
+    }
 }

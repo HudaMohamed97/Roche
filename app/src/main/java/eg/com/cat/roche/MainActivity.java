@@ -7,6 +7,8 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 
@@ -19,11 +21,14 @@ import eg.com.cat.roche.fragments.Microtomy;
 import eg.com.cat.roche.fragments.Preparation;
 import eg.com.cat.roche.fragments.Processing;
 import eg.com.cat.roche.fragments.Storage;
+import eg.com.cat.roche.fragments.list;
+import eg.com.cat.roche.fragments.refrence;
 import eg.com.cat.roche.fragments.specimen;
 
 public class MainActivity extends AppCompatActivity {
 
     LinearLayout one, two, three, four, five, six, seven, eight, nine, ten;
+    ImageView ref,list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 ft.addToBackStack(null);
                 specimen dialogFragment = new specimen();
-                dialogFragment.show(ft, "specimen");
+                dialogFragment.show(getSupportFragmentManager(), "specimen");
 
             }
         });
@@ -77,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 ft.addToBackStack(null);
                 Preparation dialogFragment = new Preparation();
-                dialogFragment.show(ft, "prepation");
+                dialogFragment.show(getSupportFragmentManager(), "prepation");
 
             }
         });
@@ -91,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 ft.addToBackStack(null);
                 Handling dialogFragment = new Handling();
-                dialogFragment.show(ft, "handling");
+                dialogFragment.show(getSupportFragmentManager(), "handling");
 
             }
         });
@@ -105,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 ft.addToBackStack(null);
                 Grossing dialogFragment = new Grossing();
-                dialogFragment.show(ft, "Grossing");
+                dialogFragment.show(getSupportFragmentManager(), "Grossing");
 
             }
         });
@@ -119,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 ft.addToBackStack(null);
                 Duration dialogFragment = new Duration();
-                dialogFragment.show(ft, "Fixation");
+                dialogFragment.show(getSupportFragmentManager(), "Fixation");
 
             }
         });
@@ -133,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 ft.addToBackStack(null);
                 Processing dialogFragment = new Processing();
-                dialogFragment.show(ft, "Fixation");
+                dialogFragment.show(getSupportFragmentManager(), "Fixation");
 
             }
         });
@@ -147,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 ft.addToBackStack(null);
                 Microtomy dialogFragment = new Microtomy();
-                dialogFragment.show(ft, "Fixation");
+                dialogFragment.show(getSupportFragmentManager(), "Fixation");
 
             }
         });
@@ -161,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 ft.addToBackStack(null);
                 Storage dialogFragment = new Storage();
-                dialogFragment.show(ft, "Fixation");
+                dialogFragment.show(getSupportFragmentManager(), "Fixation");
 
             }
         });
@@ -175,9 +180,31 @@ public class MainActivity extends AppCompatActivity {
                 }
                 ft.addToBackStack(null);
                 Coverslipping dialogFragment = new Coverslipping();
-                dialogFragment.show(ft, "Fixation");
+                dialogFragment.show(getSupportFragmentManager(), "Fixation");
 
             }
+        });
+        ref.setOnClickListener(v -> {
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            Fragment prev = getFragmentManager().findFragmentByTag("Fixation");
+            if (prev != null) {
+                ft.remove(prev);
+            }
+            ft.addToBackStack(null);
+            refrence dialogFragment = new refrence();
+            dialogFragment.show(getSupportFragmentManager(), "Fixation");
+
+        });
+        list.setOnClickListener(v -> {
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            Fragment prev = getFragmentManager().findFragmentByTag("Fixation");
+            if (prev != null) {
+                ft.remove(prev);
+            }
+            ft.addToBackStack(null);
+            list dialogFragment = new list();
+            dialogFragment.show(getSupportFragmentManager(), "Fixation");
+
         });
     }
 
@@ -192,5 +219,7 @@ public class MainActivity extends AppCompatActivity {
         eight = findViewById(R.id.eight);
         nine = findViewById(R.id.nine);
         ten = findViewById(R.id.ten);
+        ref = findViewById(R.id.ref);
+        list = findViewById(R.id.list);
     }
 }

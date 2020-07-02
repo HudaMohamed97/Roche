@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:gravity="center"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
 
     <TextView
@@ -124,7 +123,9 @@
             android:layout_marginLeft="20dp"
             android:background="@drawable/readmore"
             android:text="show More"
-            android:visibility="visible" />
+            android:visibility="gone"
+            tools:visibility="visible"
+            />
 
 
     </LinearLayout>

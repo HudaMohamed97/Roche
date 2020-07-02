@@ -77,7 +77,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="300dp"
-        android:layout_height="350dp"
+        android:layout_height="320dp"
         tools:listitem="@layout/recycler_row" />
 
 
@@ -103,7 +103,8 @@
             android:layout_marginLeft="20dp"
             android:background="@drawable/readmore"
             android:text="show More"
-            android:visibility="visible" />
+            android:visibility="visible"
+            tools:visibility="visible"/>
 
 
     </LinearLayout>
