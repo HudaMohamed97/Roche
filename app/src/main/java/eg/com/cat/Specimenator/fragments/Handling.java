@@ -48,14 +48,14 @@ public class Handling extends AppCompatActivity implements Adapter2.ItemClickLis
                         picList.clear();
                         picList.add(R.drawable.section4pic1);
                         picList.add(R.drawable.section4pic12);
-                        picList.add(R.drawable.section4pic13);
+                        picList.add(R.drawable.slide4_1_3);
                         adapter.notifyDataSetChanged();
                         break;
                     case R.id.Radio2:
                         readMore.setVisibility(View.GONE);
                         picList.clear();
                         picList.add(R.drawable.section4pic21);
-                        picList.add(R.drawable.section4pic22);
+                        picList.add(R.drawable.slide4_2_2);
                         adapter.notifyDataSetChanged();
                         break;
                     case R.id.Radio3:

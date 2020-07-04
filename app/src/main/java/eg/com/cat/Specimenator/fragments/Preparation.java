@@ -41,7 +41,7 @@ public class Preparation extends AppCompatActivity implements AdapterPre.ItemCli
                         readMore.setVisibility(View.GONE);
                         picList.clear();
                         picList.add(R.drawable.section3pic1);
-                        picList.add(R.drawable.section3pic12);
+                        picList.add(R.drawable.slide3_1_2);
                         adapter.notifyDataSetChanged();
                         break;
                     case R.id.Radio2:

@@ -69,7 +69,7 @@ public class Grossing extends AppCompatActivity implements Adapter2.ItemClickLis
                         readMore.setVisibility(View.VISIBLE);
                         picList.clear();
                         picList.add(R.drawable.section5pic41);
-                        picList.add(R.drawable.section5pic42);
+                        picList.add(R.drawable.slide5_4_2);
                         adapter.notifyDataSetChanged();
                         break;
                 }

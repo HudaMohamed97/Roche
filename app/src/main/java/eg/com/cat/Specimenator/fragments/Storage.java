@@ -53,7 +53,7 @@ public class Storage extends AppCompatActivity implements Adapter2.ItemClickList
                         readMore.setVisibility(View.VISIBLE);
                         picList.clear();
                         picList.add(R.drawable.section921);
-                        picList.add(R.drawable.section922);
+                        picList.add(R.drawable.slide9_2_2);
                         adapter.notifyDataSetChanged();
                         break;
                 }

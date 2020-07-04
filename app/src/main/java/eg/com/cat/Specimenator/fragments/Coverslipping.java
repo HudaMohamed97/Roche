@@ -42,7 +42,7 @@ public class Coverslipping extends AppCompatActivity implements Adapter2.ItemCli
                         readMore.setVisibility(View.VISIBLE);
                         picList.clear();
                         picList.add(R.drawable.section101);
-                        picList.add(R.drawable.section102);
+                        picList.add(R.drawable.slide10_1_2);
                         adapter.notifyDataSetChanged();
                         break;
 
@@ -67,7 +67,7 @@ public class Coverslipping extends AppCompatActivity implements Adapter2.ItemCli
             b.putIntegerArrayList("key", picList2); //Your id
             intent.putExtras(b); //Put your id to your next Intent
             startActivity(intent);
-           /* finish();*/
+            /* finish();*/
         });
 
     }

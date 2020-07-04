@@ -47,7 +47,7 @@ public class Duration extends AppCompatActivity implements Adapter2.ItemClickLis
                         picList.clear();
                         picList.add(R.drawable.section6pic11);
                         picList.add(R.drawable.section6pic12);
-                        picList.add(R.drawable.section6pic13);
+                        picList.add(R.drawable.slide6_1_3);
                         adapter.notifyDataSetChanged();
                         break;
                     case R.id.Radio2:

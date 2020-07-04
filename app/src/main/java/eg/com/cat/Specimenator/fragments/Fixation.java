@@ -47,14 +47,14 @@ public class Fixation extends AppCompatActivity implements Adapter2.ItemClickLis
                         readMore.setVisibility(View.GONE);
                         picList.clear();
                         picList.add(R.drawable.section2pic1);
-                        picList.add(R.drawable.section2pic2);
+                        picList.add(R.drawable.slide2_1_2);
                         adapter.notifyDataSetChanged();
                         break;
                     case R.id.Radio2:
                         readMore.setVisibility(View.GONE);
                         picList.clear();
                         picList.add(R.drawable.section2pic1in2);
-                        picList.add(R.drawable.section2pic2in2);
+                        picList.add(R.drawable.slide2_2_2);
                         adapter.notifyDataSetChanged();
                         break;
                     case R.id.Radio3:

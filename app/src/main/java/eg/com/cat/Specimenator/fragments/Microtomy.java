@@ -63,14 +63,14 @@ public class Microtomy extends AppCompatActivity implements Adapter2.ItemClickLi
                         readMore.setVisibility(View.GONE);
                         picList.clear();
                         picList.add(R.drawable.section831);
-                        picList.add(R.drawable.section832);
+                        picList.add(R.drawable.slide8_3_2);
                         adapter.notifyDataSetChanged();
                         break;
                     case R.id.Radio4:
                         readMore.setVisibility(View.VISIBLE);
                         picList.clear();
                         picList.add(R.drawable.section841);
-                        picList.add(R.drawable.section842);
+                        picList.add(R.drawable.slide8_4_2);
                         adapter.notifyDataSetChanged();
                         break;
                 }
@@ -147,7 +147,6 @@ public class Microtomy extends AppCompatActivity implements Adapter2.ItemClickLi
             picList2.clear();
             picList2.add(R.drawable.sec8inner1);
             picList2.add(R.drawable.sec8inner2);
-            picList2.add(R.drawable.sec8inner3);
             picList2.add(R.drawable.sec8inner4);
             picList2.add(R.drawable.sec8inner5);
             picList2.add(R.drawable.sec8inner6);
