@@ -10,13 +10,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import eg.com.cat.Specimenator.R;
 
-public class Coverslipping extends DialogFragment  implements Adapter2.ItemClickListener{
+public class Coverslipping extends DialogFragment implements Adapter2.ItemClickListener {
     Adapter2 adapter;
     ArrayList<Integer> picList = new ArrayList<>();
     ArrayList<Integer> picList2 = new ArrayList<>();
@@ -27,7 +29,7 @@ public class Coverslipping extends DialogFragment  implements Adapter2.ItemClick
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_coverslipping, container, false);
         getDialog().setTitle("Simple Dialog");
-
+        ImageView image = rootView.findViewById(R.id.image);
         RadioGroup radioGroup = rootView.findViewById(R.id.radioPAH);
         initRecyclerView(rootView);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -42,6 +44,12 @@ public class Coverslipping extends DialogFragment  implements Adapter2.ItemClick
                         break;
 
                 }
+            }
+        });
+        image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dismiss();
             }
         });
         readMore = rootView.findViewById(R.id.readMore);
@@ -67,7 +75,7 @@ public class Coverslipping extends DialogFragment  implements Adapter2.ItemClick
         picList.clear();
         picList.add(R.drawable.section101);
         picList.add(R.drawable.section102);
-        adapter = new Adapter2(this,getActivity(), picList);
+        adapter = new Adapter2(this, getActivity(), picList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
@@ -79,14 +87,22 @@ public class Coverslipping extends DialogFragment  implements Adapter2.ItemClick
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        Objects.requireNonNull(getDialog().getWindow()).setLayout(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+    }
+
+    @Override
     public void onItemClick(View view, int position) {
-        picList3.clear();
+       /* picList3.clear();
         picList3.add(R.drawable.ref1);
         picList3.add(R.drawable.ref2);
         ShowMoreSheet addPhotoBottomDialogFragment = new ShowMoreSheet(picList3);
         if (getFragmentManager() != null) {
             addPhotoBottomDialogFragment.show(getFragmentManager(), "");
-        }
+        }*/
 
 
     }

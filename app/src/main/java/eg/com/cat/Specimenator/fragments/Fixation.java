@@ -5,13 +5,17 @@ import android.os.Bundle;
 import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import eg.com.cat.Specimenator.R;
 
@@ -21,12 +25,17 @@ public class Fixation extends DialogFragment implements Adapter2.ItemClickListen
     ArrayList<Integer> picList2 = new ArrayList<>();
     ArrayList<Integer> picList3 = new ArrayList<>();
     ImageButton readMore;
+    RecyclerView recyclerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_fixation, container, false);
         getDialog().setTitle("Simple Dialog");
+        ImageView image = rootView.findViewById(R.id.image);
         RadioGroup radioGroup = (RadioGroup) rootView.findViewById(R.id.radioPAH);
+        RadioButton Radio1 = (RadioButton) rootView.findViewById(R.id.Radio1);
+        RadioButton Radio2 = (RadioButton) rootView.findViewById(R.id.Radio2);
+        RadioButton Radio3 = (RadioButton) rootView.findViewById(R.id.Radio3);
         initRecyclerView(rootView);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -55,10 +64,72 @@ public class Fixation extends DialogFragment implements Adapter2.ItemClickListen
                 }
             }
         });
+
+        image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dismiss();
+            }
+        });
+        recyclerView.setOnTouchListener(new OnSwipeTouchListener(getActivity()) {
+
+            @Override
+            public void onClick() {
+                super.onClick();
+                // your on click here
+            }
+
+            @Override
+            public void onDoubleClick() {
+                super.onDoubleClick();
+                // your on onDoubleClick here
+            }
+
+            @Override
+            public void onLongClick() {
+                super.onLongClick();
+                // your on onLongClick here
+            }
+
+            @Override
+            public void onSwipeUp() {
+                super.onSwipeUp();
+                // your swipe up here
+            }
+
+            @Override
+            public void onSwipeDown() {
+                super.onSwipeDown();
+                // your swipe down here.
+            }
+
+            @Override
+            public void onSwipeLeft() {
+                super.onSwipeLeft();
+                if (Radio1.isChecked()) {
+                    Radio2.setChecked(true);
+                } else if (Radio2.isChecked()) {
+                    Radio3.setChecked(true);
+                }
+
+
+            }
+
+            @Override
+            public void onSwipeRight() {
+                super.onSwipeRight();
+                if (Radio3.isChecked()) {
+                    Radio2.setChecked(true);
+                } else if (Radio2.isChecked()) {
+                    Radio1.setChecked(true);
+                }
+            }
+        });
         readMore = (ImageButton) rootView.findViewById(R.id.readMore);
         readMore.setVisibility(View.GONE);
 
         readMore.setOnClickListener(v -> {
+            picList2.clear();
             picList2.add(R.drawable.sec4inner1);
             BottomSheet addPhotoBottomDialogFragment = new BottomSheet(picList2);
             if (getFragmentManager() != null) {
@@ -71,17 +142,24 @@ public class Fixation extends DialogFragment implements Adapter2.ItemClickListen
 
 
     private void initRecyclerView(View rootView) {
-        RecyclerView recyclerView = rootView.findViewById(R.id.recycler);
+        recyclerView = rootView.findViewById(R.id.recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         picList.clear();
         picList.add(R.drawable.section2pic1);
         picList.add(R.drawable.section2pic2);
-        adapter = new Adapter2(this,getActivity(), picList);
+        adapter = new Adapter2(this, getActivity(), picList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        Objects.requireNonNull(getDialog().getWindow()).setLayout(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

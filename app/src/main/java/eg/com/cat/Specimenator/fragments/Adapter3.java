@@ -52,12 +52,6 @@ public class Adapter3 extends RecyclerView.Adapter<Adapter3.ViewHolder> {
         ViewHolder(View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageView);
-            imageView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                }
-            });
             itemView.setOnClickListener(this);
         }
 

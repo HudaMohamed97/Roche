@@ -17,13 +17,14 @@
         android:src="@drawable/roche" />
 
     <TextView
-        android:layout_width="300dp"
-        android:layout_height="27dp"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
         android:layout_gravity="center_horizontal"
         android:layout_margin="10dp"
         android:background="@drawable/blue_circular_rectangle_background"
         android:gravity="center"
-        android:text="Best practices for tissue specimens handling"
+        android:padding="5dp"
+        android:text="  Best practices for tissue specimens handling   "
         android:textColor="@android:color/white" />
 
 
@@ -356,7 +357,7 @@
                 android:layout_margin="10dp"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:background="@drawable/slide_converslipping"
+                android:background="@drawable/converslipping"
                 >
 
                <!-- <TextView

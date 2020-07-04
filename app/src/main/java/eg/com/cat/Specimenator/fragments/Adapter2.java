@@ -54,12 +54,7 @@ public class Adapter2 extends RecyclerView.Adapter<Adapter2.ViewHolder> {
         ViewHolder(View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageView);
-            imageView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    mClickListener.onItemClick(view, getPosition());
-                }
-            });
+
 
         }
 

@@ -131,13 +131,13 @@ public class MainActivity2 extends AppCompatActivity {
         seven.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                Fragment prev = getFragmentManager().findFragmentByTag("Fixation");
+                Fragment prev = getFragmentManager().findFragmentByTag("Processing");
                 if (prev != null) {
                     ft.remove(prev);
                 }
                 ft.addToBackStack(null);
                 Processing dialogFragment = new Processing();
-                dialogFragment.show(getSupportFragmentManager(), "Fixation");
+                dialogFragment.show(getSupportFragmentManager(), "Processing");
 
             }
         });
@@ -145,13 +145,13 @@ public class MainActivity2 extends AppCompatActivity {
         eight.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                Fragment prev = getFragmentManager().findFragmentByTag("Fixation");
+                Fragment prev = getFragmentManager().findFragmentByTag("Microtomy");
                 if (prev != null) {
                     ft.remove(prev);
                 }
                 ft.addToBackStack(null);
                 Microtomy dialogFragment = new Microtomy();
-                dialogFragment.show(getSupportFragmentManager(), "Fixation");
+                dialogFragment.show(getSupportFragmentManager(), "Microtomy");
 
             }
         });
@@ -159,13 +159,13 @@ public class MainActivity2 extends AppCompatActivity {
         nine.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                Fragment prev = getFragmentManager().findFragmentByTag("Fixation");
+                Fragment prev = getFragmentManager().findFragmentByTag("Storage");
                 if (prev != null) {
                     ft.remove(prev);
                 }
                 ft.addToBackStack(null);
                 Storage dialogFragment = new Storage();
-                dialogFragment.show(getSupportFragmentManager(), "Fixation");
+                dialogFragment.show(getSupportFragmentManager(), "Storage");
 
             }
         });
@@ -173,13 +173,13 @@ public class MainActivity2 extends AppCompatActivity {
         ten.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                Fragment prev = getFragmentManager().findFragmentByTag("Fixation");
+                Fragment prev = getFragmentManager().findFragmentByTag("Coverslipping");
                 if (prev != null) {
                     ft.remove(prev);
                 }
                 ft.addToBackStack(null);
                 Coverslipping dialogFragment = new Coverslipping();
-                dialogFragment.show(getSupportFragmentManager(), "Fixation");
+                dialogFragment.show(getSupportFragmentManager(), "Coverslipping");
 
             }
         });
