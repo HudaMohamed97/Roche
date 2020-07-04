@@ -12,6 +12,7 @@ import android.view.Window;
 import android.widget.Button;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -24,47 +25,37 @@ import java.util.Objects;
 
 import eg.com.cat.Specimenator.R;
 
-public class BottomSheet extends DialogFragment {
+public class BottomSheet extends AppCompatActivity {
     public static final String TAG = "ActionBottomDialog";
     AdapterSheet adapter;
     int style = DialogFragment.STYLE_NO_TITLE;
     int theme = R.style.MyDialog;
     ArrayList<Integer> picList = new ArrayList<>();
 
-
-    public BottomSheet(ArrayList<Integer> picList) {
-        this.picList = picList;
-
-    }
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
-        setStyle(style, theme);
-
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.bottom_sheet, container, false);
-    }
-
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        initRecyclerView(view);
-        Button exist = view.findViewById(R.id.button_close);
-        exist.setOnClickListener(view1 -> super.dismiss());
-
+        setContentView(R.layout.bottom_sheet);
+        Button button_close = findViewById(R.id.button_close);
+        button_close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+        Bundle b = getIntent().getExtras();
+        if (b != null)
+            picList = b.getIntegerArrayList("key");
+        initRecyclerView();
 
     }
 
 
-    private void initRecyclerView(View rootView) {
-        RecyclerView recyclerView = rootView.findViewById(R.id.recycler);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        adapter = new AdapterSheet(getActivity(), picList);
+    private void initRecyclerView() {
+        RecyclerView recyclerView = findViewById(R.id.recycler);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new AdapterSheet(this, picList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }

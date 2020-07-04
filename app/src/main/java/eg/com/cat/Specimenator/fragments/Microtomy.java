@@ -1,5 +1,6 @@
 package eg.com.cat.Specimenator.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -155,10 +156,11 @@ public class Microtomy extends AppCompatActivity implements Adapter2.ItemClickLi
             picList2.add(R.drawable.sec8inner9);
             picList2.add(R.drawable.sec8inner10);
             picList2.add(R.drawable.sec8inner11);
-            BottomSheet addPhotoBottomDialogFragment = new BottomSheet(picList2);
-            if (getFragmentManager() != null) {
-                addPhotoBottomDialogFragment.show(getSupportFragmentManager(), "");
-            }
+            Intent intent = new Intent(getApplicationContext(), BottomSheet.class);
+            Bundle b = new Bundle();
+            b.putIntegerArrayList("key", picList2); //Your id
+            intent.putExtras(b); //Put your id to your next Intent
+            startActivity(intent);
         });
 
     }

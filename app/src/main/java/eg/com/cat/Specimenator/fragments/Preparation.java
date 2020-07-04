@@ -1,5 +1,6 @@
 package eg.com.cat.Specimenator.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -47,7 +48,7 @@ public class Preparation extends AppCompatActivity implements AdapterPre.ItemCli
                         readMore.setVisibility(View.VISIBLE);
                         picList.clear();
                         picList.add(R.drawable.section3pic21);
-                        picList.add(R.drawable.slide3_2_2);
+                        picList.add(R.drawable.slide32222);
                         adapter.notifyDataSetChanged();
                         break;
                 }
@@ -114,10 +115,11 @@ public class Preparation extends AppCompatActivity implements AdapterPre.ItemCli
             public void onClick(View view) {
                 picList2.clear();
                 picList2.add(R.drawable.sec3inner1);
-                BottomSheet addPhotoBottomDialogFragment = new BottomSheet(picList2);
-                if (getFragmentManager() != null) {
-                    addPhotoBottomDialogFragment.show(getSupportFragmentManager(), "");
-                }
+                Intent intent = new Intent(getApplicationContext(), BottomSheet.class);
+                Bundle b = new Bundle();
+                b.putIntegerArrayList("key", picList2); //Your id
+                intent.putExtras(b); //Put your id to your next Intent
+                startActivity(intent);
             }
         });
     }

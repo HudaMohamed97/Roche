@@ -1,5 +1,6 @@
 package eg.com.cat.Specimenator.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -133,10 +134,11 @@ public class Fixation extends AppCompatActivity implements Adapter2.ItemClickLis
         readMore.setOnClickListener(v -> {
             picList2.clear();
             picList2.add(R.drawable.sec4inner1);
-            BottomSheet addPhotoBottomDialogFragment = new BottomSheet(picList2);
-            if (getFragmentManager() != null) {
-                addPhotoBottomDialogFragment.show(getSupportFragmentManager(), "");
-            }
+            Intent intent = new Intent(getApplicationContext(), BottomSheet.class);
+            Bundle b = new Bundle();
+            b.putIntegerArrayList("key", picList2); //Your id
+            intent.putExtras(b); //Put your id to your next Intent
+            startActivity(intent);
         });
 
     }

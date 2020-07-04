@@ -1,5 +1,6 @@
 package eg.com.cat.Specimenator.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -121,10 +122,11 @@ public class Storage extends AppCompatActivity implements Adapter2.ItemClickList
                 picList2.add(R.drawable.sec9inner2);
                 picList2.add(R.drawable.sec9inner3);
                 picList2.add(R.drawable.sec9inner4);
-                BottomSheet addPhotoBottomDialogFragment = new BottomSheet(picList2);
-                if (getFragmentManager() != null) {
-                    addPhotoBottomDialogFragment.show(getSupportFragmentManager(), "");
-                }
+                Intent intent = new Intent(getApplicationContext(), BottomSheet.class);
+                Bundle b = new Bundle();
+                b.putIntegerArrayList("key", picList2); //Your id
+                intent.putExtras(b); //Put your id to your next Intent
+                startActivity(intent);
 
 
             }

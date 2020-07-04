@@ -44,6 +44,9 @@
         <activity
             android:name=".fragments.Coverslipping"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".fragments.BottomSheet"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".fragments.Processing"

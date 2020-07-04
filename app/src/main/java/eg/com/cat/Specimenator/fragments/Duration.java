@@ -1,5 +1,6 @@
 package eg.com.cat.Specimenator.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -121,10 +122,11 @@ public class Duration extends AppCompatActivity implements Adapter2.ItemClickLis
                 picList2.clear();
                 picList2.add(R.drawable.sec6inner1);
                 picList2.add(R.drawable.sec6inner2);
-                BottomSheet addPhotoBottomDialogFragment = new BottomSheet(picList2);
-                if (getFragmentManager() != null) {
-                    addPhotoBottomDialogFragment.show(getSupportFragmentManager(), "");
-                }
+                Intent intent = new Intent(getApplicationContext(), BottomSheet.class);
+                Bundle b = new Bundle();
+                b.putIntegerArrayList("key", picList2); //Your id
+                intent.putExtras(b); //Put your id to your next Intent
+                startActivity(intent);
             }
         });
     }

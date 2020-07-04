@@ -1,5 +1,6 @@
 package eg.com.cat.Specimenator.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -151,10 +152,11 @@ public class Processing extends AppCompatActivity implements Adapter2.ItemClickL
                 picList2.add(R.drawable.sec7inner9);
                 picList2.add(R.drawable.sec7inner10);
                 picList2.add(R.drawable.sec7inner11);
-                BottomSheet addPhotoBottomDialogFragment = new BottomSheet(picList2);
-                if (getFragmentManager() != null) {
-                    addPhotoBottomDialogFragment.show(getSupportFragmentManager(), "");
-                }
+                Intent intent = new Intent(getApplicationContext(), BottomSheet.class);
+                Bundle b = new Bundle();
+                b.putIntegerArrayList("key", picList2); //Your id
+                intent.putExtras(b); //Put your id to your next Intent
+                startActivity(intent);
             }
         });
     }
