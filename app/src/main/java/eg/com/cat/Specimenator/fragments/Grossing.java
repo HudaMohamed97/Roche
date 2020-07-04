@@ -139,7 +139,7 @@ public class Grossing extends DialogFragment implements Adapter2.ItemClickListen
         });
         readMore = rootView.findViewById(R.id.readMore);
         readMore.setOnClickListener(v -> {
-            picList.clear();
+            picList2.clear();
             picList2.add(R.drawable.sec5inner1);
             picList2.add(R.drawable.sec5inner2);
             BottomSheet addPhotoBottomDialogFragment = new BottomSheet(picList2);

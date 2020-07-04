@@ -19,8 +19,8 @@ import java.util.Objects;
 
 import eg.com.cat.Specimenator.R;
 
-public class Preparation extends DialogFragment implements Adapter2.ItemClickListener {
-    Adapter2 adapter;
+public class Preparation extends DialogFragment implements AdapterPre.ItemClickListener {
+    AdapterPre adapter;
     ArrayList<Integer> picList = new ArrayList<>();
     ArrayList<Integer> picList2 = new ArrayList<>();
     ArrayList<Integer> picList3 = new ArrayList<>();
@@ -50,7 +50,7 @@ public class Preparation extends DialogFragment implements Adapter2.ItemClickLis
                         readMore.setVisibility(View.VISIBLE);
                         picList.clear();
                         picList.add(R.drawable.section3pic21);
-                        picList.add(R.drawable.section3pic22);
+                        picList.add(R.drawable.slide3_2_2);
                         adapter.notifyDataSetChanged();
                         break;
                 }
@@ -132,7 +132,7 @@ public class Preparation extends DialogFragment implements Adapter2.ItemClickLis
         picList.clear();
         picList.add(R.drawable.section3pic1);
         picList.add(R.drawable.section3pic12);
-        adapter = new Adapter2(this, getActivity(), picList);
+        adapter = new AdapterPre(this, getActivity(), picList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
