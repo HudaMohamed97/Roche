@@ -2,6 +2,7 @@ package eg.com.cat.Specimenator;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +28,7 @@ import eg.com.cat.Specimenator.fragments.specimen;
 public class MainActivity2 extends AppCompatActivity {
 
     LinearLayout one, two, three, four, five, six, seven, eight, nine, ten;
-    ImageView ref,list;
+    ImageView ref, list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,9 @@ public class MainActivity2 extends AppCompatActivity {
     private void initializeClicks() {
         one.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), specimen.class));
+
+/*
 
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 Fragment prev = getFragmentManager().findFragmentByTag("specimen");
@@ -51,16 +55,17 @@ public class MainActivity2 extends AppCompatActivity {
                     ft.remove(prev);
                 }
                 ft.addToBackStack(null);
-                specimen dialogFragment = new specimen();
-                dialogFragment.show(getSupportFragmentManager(), "specimen");
+                specimen fragment = new specimen();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();*/
 
             }
         });
 
         two.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Fixation.class));
 
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                /*FragmentTransaction ft = getFragmentManager().beginTransaction();
                 Fragment prev = getFragmentManager().findFragmentByTag("Fixation");
                 if (prev != null) {
                     ft.remove(prev);
@@ -68,55 +73,64 @@ public class MainActivity2 extends AppCompatActivity {
                 ft.addToBackStack(null);
                 Fixation dialogFragment = new Fixation();
                 dialogFragment.show(getSupportFragmentManager(), "Fixation");
-
+*/
             }
         });
 
         three.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                startActivity(new Intent(getApplicationContext(), Preparation.class));
+
+               /* FragmentTransaction ft = getFragmentManager().beginTransaction();
                 Fragment prev = getFragmentManager().findFragmentByTag("prepartion");
                 if (prev != null) {
                     ft.remove(prev);
                 }
                 ft.addToBackStack(null);
                 Preparation dialogFragment = new Preparation();
-                dialogFragment.show(getSupportFragmentManager(), "prepation");
+                dialogFragment.show(getSupportFragmentManager(), "prepation");*/
 
             }
         });
 
         four.setOnClickListener(new View.OnClickListener() {
+
             public void onClick(View v) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                startActivity(new Intent(getApplicationContext(), Handling.class));
+
+                /*FragmentTransaction ft = getFragmentManager().beginTransaction();
                 Fragment prev = getFragmentManager().findFragmentByTag("handling");
                 if (prev != null) {
                     ft.remove(prev);
                 }
                 ft.addToBackStack(null);
                 Handling dialogFragment = new Handling();
-                dialogFragment.show(getSupportFragmentManager(), "handling");
+                dialogFragment.show(getSupportFragmentManager(), "handling");*/
 
             }
         });
 
         five.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                startActivity(new Intent(getApplicationContext(), Grossing.class));
+
+           /*     FragmentTransaction ft = getFragmentManager().beginTransaction();
                 Fragment prev = getFragmentManager().findFragmentByTag("Grossing");
                 if (prev != null) {
                     ft.remove(prev);
                 }
                 ft.addToBackStack(null);
                 Grossing dialogFragment = new Grossing();
-                dialogFragment.show(getSupportFragmentManager(), "Grossing");
+                dialogFragment.show(getSupportFragmentManager(), "Grossing");*/
 
             }
         });
 
         six.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                startActivity(new Intent(getApplicationContext(), Duration.class));
+
+              /*  FragmentTransaction ft = getFragmentManager().beginTransaction();
                 Fragment prev = getFragmentManager().findFragmentByTag("Fixation");
                 if (prev != null) {
                     ft.remove(prev);
@@ -124,62 +138,41 @@ public class MainActivity2 extends AppCompatActivity {
                 ft.addToBackStack(null);
                 Duration dialogFragment = new Duration();
                 dialogFragment.show(getSupportFragmentManager(), "Fixation");
-
+*/
             }
         });
 
         seven.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                startActivity(new Intent(getApplicationContext(), Processing.class));
+
+              /*  FragmentTransaction ft = getFragmentManager().beginTransaction();
                 Fragment prev = getFragmentManager().findFragmentByTag("Processing");
                 if (prev != null) {
                     ft.remove(prev);
                 }
                 ft.addToBackStack(null);
                 Processing dialogFragment = new Processing();
-                dialogFragment.show(getSupportFragmentManager(), "Processing");
+                dialogFragment.show(getSupportFragmentManager(), "Processing");*/
 
             }
         });
 
         eight.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                Fragment prev = getFragmentManager().findFragmentByTag("Microtomy");
-                if (prev != null) {
-                    ft.remove(prev);
-                }
-                ft.addToBackStack(null);
-                Microtomy dialogFragment = new Microtomy();
-                dialogFragment.show(getSupportFragmentManager(), "Microtomy");
-
+                startActivity(new Intent(getApplicationContext(), Microtomy.class));
             }
         });
 
         nine.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                Fragment prev = getFragmentManager().findFragmentByTag("Storage");
-                if (prev != null) {
-                    ft.remove(prev);
-                }
-                ft.addToBackStack(null);
-                Storage dialogFragment = new Storage();
-                dialogFragment.show(getSupportFragmentManager(), "Storage");
-
+                startActivity(new Intent(getApplicationContext(), Storage.class));
             }
         });
 
         ten.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                Fragment prev = getFragmentManager().findFragmentByTag("Coverslipping");
-                if (prev != null) {
-                    ft.remove(prev);
-                }
-                ft.addToBackStack(null);
-                Coverslipping dialogFragment = new Coverslipping();
-                dialogFragment.show(getSupportFragmentManager(), "Coverslipping");
+                startActivity(new Intent(getApplicationContext(), Coverslipping.class));
 
             }
         });

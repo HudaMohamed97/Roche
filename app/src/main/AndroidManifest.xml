@@ -22,6 +22,37 @@
         </activity>
         <activity
             android:name="eg.com.cat.Specimenator.MainActivity2"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".fragments.specimen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".fragments.Preparation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".fragments.Fixation"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".fragments.Grossing"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".fragments.Duration"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".fragments.Storage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".fragments.Coverslipping"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".fragments.Processing"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".fragments.Microtomy"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".fragments.Handling"
             android:screenOrientation="portrait">
 
         </activity>

@@ -1,25 +1,21 @@
 package eg.com.cat.Specimenator.fragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.DialogFragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
-import java.util.Objects;
 
 import eg.com.cat.Specimenator.R;
 
-public class Preparation extends DialogFragment implements AdapterPre.ItemClickListener {
+public class Preparation extends AppCompatActivity implements AdapterPre.ItemClickListener {
     AdapterPre adapter;
     ArrayList<Integer> picList = new ArrayList<>();
     ArrayList<Integer> picList2 = new ArrayList<>();
@@ -28,14 +24,15 @@ public class Preparation extends DialogFragment implements AdapterPre.ItemClickL
     RecyclerView recyclerView;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_preparation, container, false);
-        getDialog().setTitle("Simple Dialog");
-        ImageView image = rootView.findViewById(R.id.image);
-        RadioGroup radioGroup = (RadioGroup) rootView.findViewById(R.id.radioPAH);
-        RadioButton Radio1 = (RadioButton) rootView.findViewById(R.id.Radio1);
-        RadioButton Radio2 = (RadioButton) rootView.findViewById(R.id.Radio2);
-        initRecyclerView(rootView);
+    protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_preparation);
+        ImageView image = findViewById(R.id.image);
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioPAH);
+        RadioButton Radio1 = (RadioButton) findViewById(R.id.Radio1);
+        RadioButton Radio2 = (RadioButton) findViewById(R.id.Radio2);
+        initRecyclerView();
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
@@ -60,10 +57,10 @@ public class Preparation extends DialogFragment implements AdapterPre.ItemClickL
         image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dismiss();
+                finish();
             }
         });
-        recyclerView.setOnTouchListener(new OnSwipeTouchListener(getActivity()) {
+        recyclerView.setOnTouchListener(new OnSwipeTouchListener(this) {
 
             @Override
             public void onClick() {
@@ -111,7 +108,7 @@ public class Preparation extends DialogFragment implements AdapterPre.ItemClickL
         });
 
 
-        readMore = (ImageButton) rootView.findViewById(R.id.readMore);
+        readMore = (ImageButton) findViewById(R.id.readMore);
         readMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -119,20 +116,19 @@ public class Preparation extends DialogFragment implements AdapterPre.ItemClickL
                 picList2.add(R.drawable.sec3inner1);
                 BottomSheet addPhotoBottomDialogFragment = new BottomSheet(picList2);
                 if (getFragmentManager() != null) {
-                    addPhotoBottomDialogFragment.show(getFragmentManager(), "");
+                    addPhotoBottomDialogFragment.show(getSupportFragmentManager(), "");
                 }
             }
         });
-        return rootView;
     }
 
-    private void initRecyclerView(View rootView) {
-        recyclerView = rootView.findViewById(R.id.recycler);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+    private void initRecyclerView() {
+        recyclerView = findViewById(R.id.recycler);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         picList.clear();
         picList.add(R.drawable.section3pic1);
         picList.add(R.drawable.section3pic12);
-        adapter = new AdapterPre(this, getActivity(), picList);
+        adapter = new AdapterPre(this, this, picList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
@@ -141,15 +137,12 @@ public class Preparation extends DialogFragment implements AdapterPre.ItemClickL
     @Override
     public void onResume() {
         super.onResume();
-        Objects.requireNonNull(getDialog().getWindow()).setLayout(
+       /* Objects.requireNonNull(getDialog().getWindow()).setLayout(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT);
+                ViewGroup.LayoutParams.WRAP_CONTENT);*/
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+
 
     @Override
     public void onItemClick(View view, int position) {

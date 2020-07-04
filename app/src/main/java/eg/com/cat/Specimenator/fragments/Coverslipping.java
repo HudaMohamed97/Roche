@@ -2,6 +2,7 @@ package eg.com.cat.Specimenator.fragments;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,7 +19,7 @@ import java.util.Objects;
 
 import eg.com.cat.Specimenator.R;
 
-public class Coverslipping extends DialogFragment implements Adapter2.ItemClickListener {
+public class Coverslipping extends AppCompatActivity implements Adapter2.ItemClickListener {
     Adapter2 adapter;
     ArrayList<Integer> picList = new ArrayList<>();
     ArrayList<Integer> picList2 = new ArrayList<>();
@@ -26,12 +27,13 @@ public class Coverslipping extends DialogFragment implements Adapter2.ItemClickL
     ImageButton readMore;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_coverslipping, container, false);
-        getDialog().setTitle("Simple Dialog");
-        ImageView image = rootView.findViewById(R.id.image);
-        RadioGroup radioGroup = rootView.findViewById(R.id.radioPAH);
-        initRecyclerView(rootView);
+    protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_coverslipping);
+        ImageView image = findViewById(R.id.image);
+        RadioGroup radioGroup = findViewById(R.id.radioPAH);
+        initRecyclerView();
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
@@ -49,10 +51,10 @@ public class Coverslipping extends DialogFragment implements Adapter2.ItemClickL
         image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dismiss();
+                finish();
             }
         });
-        readMore = rootView.findViewById(R.id.readMore);
+        readMore = findViewById(R.id.readMore);
         readMore.setOnClickListener(v -> {
             picList2.clear();
             picList2.add(R.drawable.sec10inner1);
@@ -61,37 +63,23 @@ public class Coverslipping extends DialogFragment implements Adapter2.ItemClickL
             picList2.add(R.drawable.sec10inner4);
             BottomSheet addPhotoBottomDialogFragment = new BottomSheet(picList2);
             if (getFragmentManager() != null) {
-                addPhotoBottomDialogFragment.show(getFragmentManager(), "");
+                addPhotoBottomDialogFragment.show(getSupportFragmentManager(), "");
             }
 
         });
 
-        return rootView;
     }
 
-    private void initRecyclerView(View rootView) {
-        RecyclerView recyclerView = rootView.findViewById(R.id.recycler);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+    private void initRecyclerView() {
+        RecyclerView recyclerView = findViewById(R.id.recycler);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         picList.clear();
         picList.add(R.drawable.section101);
         picList.add(R.drawable.section102);
-        adapter = new Adapter2(this, getActivity(), picList);
+        adapter = new Adapter2(this, this, picList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        Objects.requireNonNull(getDialog().getWindow()).setLayout(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT);
     }
 
     @Override

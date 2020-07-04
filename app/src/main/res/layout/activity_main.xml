@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background"
     android:orientation="vertical"
-    tools:context=".MainActivity2"
-    android:background="@drawable/background">
+    tools:context=".MainActivity2">
 
     <ImageView
         android:id="@+id/image"
         android:layout_width="100dp"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:layout_gravity="end"
         android:layout_margin="5dp"
-        android:src="@drawable/roche" />
+        android:src="@drawable/roche"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_gravity="center_horizontal"
@@ -25,93 +28,98 @@
         android:gravity="center"
         android:padding="5dp"
         android:text="  Best practices for tissue specimens handling   "
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image" />
 
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="300dp"
-            android:layout_height="35dp"
-            android:layout_margin="10dp"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal"
-            android:textColor="@android:color/holo_blue_light"
-            android:background="@drawable/tissue_procurement"
-            />
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:background="@drawable/tissue_procurement"
+                android:gravity="center"
+                android:textColor="@android:color/holo_blue_light"
+                android:textStyle="bold" />
 
 
             <LinearLayout
                 android:id="@+id/one"
                 android:layout_width="300dp"
-                android:layout_height="35dp"
-                android:layout_margin="5dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center"
-                android:gravity="center"
+                android:layout_margin="5dp"
                 android:background="@drawable/tissue_specimen_labeling"
+                android:gravity="center"
 
                 >
-              <!--  <TextView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:gravity="center"
-                    android:text="1"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/holo_blue_light"
-                    android:background="@drawable/white_circular_rectangle_background"
-                    />
+                <!--  <TextView
+                      android:layout_width="45dp"
+                      android:layout_height="45dp"
+                      android:gravity="center"
+                      android:text="1"
+                      android:textStyle="bold"
+                      android:textColor="@android:color/holo_blue_light"
+                      android:background="@drawable/white_circular_rectangle_background"
+                      />
 
-                <TextView
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Tissue specimen labeling"
-                    android:textColor="@android:color/white"
-                    android:background="@drawable/trans_circular_rectangle_background"
-                    />-->
+                  <TextView
+                      android:layout_marginLeft="10dp"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:gravity="center"
+                      android:layout_gravity="center_horizontal"
+                      android:text="Tissue specimen labeling"
+                      android:textColor="@android:color/white"
+                      android:background="@drawable/trans_circular_rectangle_background"
+                      />-->
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/two"
                 android:layout_width="300dp"
-                android:layout_height="35dp"
-                android:layout_margin="10dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center"
-                android:gravity="center"
+                android:layout_margin="10dp"
                 android:background="@drawable/time_to_fixation"
-                >
+                android:gravity="center">
 
-               <!-- <TextView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:background="@drawable/white_circular_rectangle_background"
-                    android:gravity="center"
-                    android:text="2"
-                    android:textColor="@android:color/holo_blue_light"
-                    android:textStyle="bold" />
+                <!-- <TextView
+                     android:layout_width="45dp"
+                     android:layout_height="45dp"
+                     android:background="@drawable/white_circular_rectangle_background"
+                     android:gravity="center"
+                     android:text="2"
+                     android:textColor="@android:color/holo_blue_light"
+                     android:textStyle="bold" />
 
-                <TextView
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Time to fixation"
-                    android:textColor="@android:color/white"
-                    android:background="@drawable/trans_circular_rectangle_background"
-                    />-->
+                 <TextView
+                     android:layout_marginLeft="10dp"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:gravity="center"
+                     android:layout_gravity="center_horizontal"
+                     android:text="Time to fixation"
+                     android:textColor="@android:color/white"
+                     android:background="@drawable/trans_circular_rectangle_background"
+                     />-->
 
             </LinearLayout>
 
@@ -119,141 +127,139 @@
             <LinearLayout
                 android:id="@+id/three"
                 android:layout_width="300dp"
-                android:layout_height="35dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:background="@drawable/tissue_specimen_preparation"
+                android:gravity="center"
 
                 >
-              <!--  <TextView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:gravity="center"
-                    android:text="3"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/holo_blue_light"
-                    android:background="@drawable/white_circular_rectangle_background"
-                    />
+                <!--  <TextView
+                      android:layout_width="45dp"
+                      android:layout_height="45dp"
+                      android:gravity="center"
+                      android:text="3"
+                      android:textStyle="bold"
+                      android:textColor="@android:color/holo_blue_light"
+                      android:background="@drawable/white_circular_rectangle_background"
+                      />
 
-                <TextView
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Tissue specimen preparation"
-                    android:textColor="@android:color/white"
-                    android:background="@drawable/trans_circular_rectangle_background"
-                    />-->
+                  <TextView
+                      android:layout_marginLeft="10dp"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:gravity="center"
+                      android:layout_gravity="center_horizontal"
+                      android:text="Tissue specimen preparation"
+                      android:textColor="@android:color/white"
+                      android:background="@drawable/trans_circular_rectangle_background"
+                      />-->
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/four"
                 android:layout_width="300dp"
-                android:layout_height="35dp"
-                android:layout_margin="10dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center"
-                android:gravity="center"
+                android:layout_margin="10dp"
                 android:background="@drawable/tissue_specimen_handling"
+                android:gravity="center"
 
                 >
-              <!--  <TextView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:gravity="center"
-                    android:text="4"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/holo_blue_light"
-                    android:background="@drawable/white_circular_rectangle_background"
-                    />
+                <!--  <TextView
+                      android:layout_width="45dp"
+                      android:layout_height="45dp"
+                      android:gravity="center"
+                      android:text="4"
+                      android:textStyle="bold"
+                      android:textColor="@android:color/holo_blue_light"
+                      android:background="@drawable/white_circular_rectangle_background"
+                      />
 
-                <TextView
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Tissue specimen handling"
-                    android:textColor="@android:color/white"
-                    android:background="@drawable/trans_circular_rectangle_background"
-                    />-->
+                  <TextView
+                      android:layout_marginLeft="10dp"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:gravity="center"
+                      android:layout_gravity="center_horizontal"
+                      android:text="Tissue specimen handling"
+                      android:textColor="@android:color/white"
+                      android:background="@drawable/trans_circular_rectangle_background"
+                      />-->
             </LinearLayout>
 
 
             <TextView
                 android:layout_width="300dp"
-                android:layout_height="35dp"
-                android:layout_margin="10dp"
-                android:gravity="center"
+                android:layout_height="25dp"
                 android:layout_gravity="center_horizontal"
-                android:textStyle="bold"
-                android:textColor="@android:color/holo_blue_light"
+                android:layout_margin="10dp"
                 android:background="@drawable/laboratory"
-                />
+                android:gravity="center"
+                android:textColor="@android:color/holo_blue_light"
+                android:textStyle="bold" />
 
 
             <LinearLayout
                 android:id="@+id/five"
                 android:layout_width="300dp"
-                android:layout_height="35dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:background="@drawable/tissue_grossing_fixation"
-                >
-              <!--  <TextView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:gravity="center"
-                    android:text="5"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/holo_blue_light"
-                    android:background="@drawable/white_circular_rectangle_background"
-                    />
+                android:gravity="center">
+                <!--  <TextView
+                      android:layout_width="45dp"
+                      android:layout_height="45dp"
+                      android:gravity="center"
+                      android:text="5"
+                      android:textStyle="bold"
+                      android:textColor="@android:color/holo_blue_light"
+                      android:background="@drawable/white_circular_rectangle_background"
+                      />
 
-                <TextView
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Tissue grossing and fixation"
-                    android:textColor="@android:color/white"
-                    android:background="@drawable/trans_circular_rectangle_background"
-                    />-->
+                  <TextView
+                      android:layout_marginLeft="10dp"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:gravity="center"
+                      android:layout_gravity="center_horizontal"
+                      android:text="Tissue grossing and fixation"
+                      android:textColor="@android:color/white"
+                      android:background="@drawable/trans_circular_rectangle_background"
+                      />-->
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/six"
                 android:layout_width="300dp"
-                android:layout_height="35dp"
-                android:layout_margin="10dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center"
-                android:gravity="center"
+                android:layout_margin="10dp"
                 android:background="@drawable/duration_fixation"
+                android:gravity="center"
 
                 >
-               <!-- <TextView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:gravity="center"
-                    android:text="6"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/holo_blue_light"
-                    android:background="@drawable/white_circular_rectangle_background"
-                    />
+                <!-- <TextView
+                     android:layout_width="45dp"
+                     android:layout_height="45dp"
+                     android:gravity="center"
+                     android:text="6"
+                     android:textStyle="bold"
+                     android:textColor="@android:color/holo_blue_light"
+                     android:background="@drawable/white_circular_rectangle_background"
+                     />
 
-                <TextView
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Duration of fixation"
-                    android:textColor="@android:color/white"
-                    android:background="@drawable/trans_circular_rectangle_background"
-                    />-->
+                 <TextView
+                     android:layout_marginLeft="10dp"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:gravity="center"
+                     android:layout_gravity="center_horizontal"
+                     android:text="Duration of fixation"
+                     android:textColor="@android:color/white"
+                     android:background="@drawable/trans_circular_rectangle_background"
+                     />-->
 
             </LinearLayout>
 
@@ -261,163 +267,159 @@
             <LinearLayout
                 android:id="@+id/seven"
                 android:layout_width="300dp"
-                android:layout_height="35dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:background="@drawable/tissue_processing"
-                >
-               <!-- <TextView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:gravity="center"
-                    android:text="7"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/holo_blue_light"
-                    android:background="@drawable/white_circular_rectangle_background"
-                    />
+                android:gravity="center">
+                <!-- <TextView
+                     android:layout_width="45dp"
+                     android:layout_height="45dp"
+                     android:gravity="center"
+                     android:text="7"
+                     android:textStyle="bold"
+                     android:textColor="@android:color/holo_blue_light"
+                     android:background="@drawable/white_circular_rectangle_background"
+                     />
 
-                <TextView
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Tissue processing"
-                    android:textColor="@android:color/white"
-                    android:background="@drawable/trans_circular_rectangle_background"
-                    />-->
+                 <TextView
+                     android:layout_marginLeft="10dp"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:gravity="center"
+                     android:layout_gravity="center_horizontal"
+                     android:text="Tissue processing"
+                     android:textColor="@android:color/white"
+                     android:background="@drawable/trans_circular_rectangle_background"
+                     />-->
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/eight"
                 android:layout_width="300dp"
-                android:layout_height="35dp"
-                android:layout_margin="10dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center"
-                android:gravity="center"
+                android:layout_margin="10dp"
                 android:background="@drawable/microtomy"
-                >
+                android:gravity="center">
 
-              <!--  <TextView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:background="@drawable/white_circular_rectangle_background"
-                    android:gravity="center"
-                    android:text="8"
-                    android:textColor="@android:color/holo_blue_light"
-                    android:textStyle="bold" />
+                <!--  <TextView
+                      android:layout_width="45dp"
+                      android:layout_height="45dp"
+                      android:background="@drawable/white_circular_rectangle_background"
+                      android:gravity="center"
+                      android:text="8"
+                      android:textColor="@android:color/holo_blue_light"
+                      android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/trans_circular_rectangle_background"
-                    android:gravity="center"
-                    android:text="Microtomy"
-                    android:textColor="@android:color/white" />-->
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:layout_gravity="center_horizontal"
+                      android:layout_marginLeft="10dp"
+                      android:background="@drawable/trans_circular_rectangle_background"
+                      android:gravity="center"
+                      android:text="Microtomy"
+                      android:textColor="@android:color/white" />-->
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/nine"
                 android:layout_width="300dp"
-                android:layout_height="35dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:background="@drawable/slide_block_storage"
-                >
-<!--
-                <TextView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:background="@drawable/white_circular_rectangle_background"
-                    android:gravity="center"
-                    android:text="9"
-                    android:textColor="@android:color/holo_blue_light"
-                    android:textStyle="bold" />
+                android:gravity="center">
+                <!--
+                                <TextView
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:background="@drawable/white_circular_rectangle_background"
+                                    android:gravity="center"
+                                    android:text="9"
+                                    android:textColor="@android:color/holo_blue_light"
+                                    android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/trans_circular_rectangle_background"
-                    android:gravity="center"
-                    android:text="Slide and block storage"
-                    android:textColor="@android:color/white" />-->
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="10dp"
+                                    android:background="@drawable/trans_circular_rectangle_background"
+                                    android:gravity="center"
+                                    android:text="Slide and block storage"
+                                    android:textColor="@android:color/white" />-->
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/ten"
                 android:layout_width="300dp"
-                android:layout_height="35dp"
-                android:layout_margin="10dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center"
-                android:gravity="center"
+                android:layout_margin="10dp"
                 android:background="@drawable/converslipping"
-                >
+                android:gravity="center">
 
-               <!-- <TextView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:background="@drawable/white_circular_rectangle_background"
-                    android:gravity="center"
-                    android:text="10"
-                    android:textColor="@android:color/holo_blue_light"
-                    android:textStyle="bold" />
+                <!-- <TextView
+                     android:layout_width="45dp"
+                     android:layout_height="45dp"
+                     android:background="@drawable/white_circular_rectangle_background"
+                     android:gravity="center"
+                     android:text="10"
+                     android:textColor="@android:color/holo_blue_light"
+                     android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/trans_circular_rectangle_background"
-                    android:gravity="center"
-                    android:text="Slide Coverslipping"
-                    android:textColor="@android:color/white" />-->
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:layout_gravity="center_horizontal"
+                     android:layout_marginLeft="10dp"
+                     android:background="@drawable/trans_circular_rectangle_background"
+                     android:gravity="center"
+                     android:text="Slide Coverslipping"
+                     android:textColor="@android:color/white" />-->
             </LinearLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/view"
-                android:layout_marginBottom="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                >
-
-                <ImageView
-                    android:id="@+id/list"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="start"
-                    android:layout_margin="10dp"
-                    android:src="@drawable/demo"
-                    android:focusable="true"
-                    android:clickable="true"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="end"
-                    android:focusable="true"
-                    android:clickable="true"
-                    android:id="@+id/ref"
-                    android:layout_margin="10dp"
-                    android:src="@drawable/referenceicon"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
         </LinearLayout>
 
 
     </ScrollView>
 
-</LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@color/transparent"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/list"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_gravity="start"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/demo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ref"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/referenceicon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

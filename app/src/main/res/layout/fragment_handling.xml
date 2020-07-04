@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@drawable/background"
     android:orientation="vertical">
 
@@ -11,6 +11,8 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -26,8 +28,9 @@
 
         <ImageView
             android:layout_width="100dp"
-            android:layout_height="70dp"
+            android:layout_height="40dp"
             android:layout_gravity="start"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:src="@drawable/roche"
@@ -62,7 +65,8 @@
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:background="@drawable/tissue_specimen_handling"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="horizontal">
             <!-- <TextView
                  android:layout_width="45dp"
                  android:layout_height="45dp"
@@ -154,8 +158,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="300dp"
-            android:layout_gravity="center"
             android:layout_height="350dp"
+            android:layout_gravity="center"
             tools:listitem="@layout/recycler_row" />
 
     </LinearLayout>

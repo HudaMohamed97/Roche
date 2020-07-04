@@ -24,9 +24,11 @@ import java.util.Objects;
 
 import eg.com.cat.Specimenator.R;
 
-public class BottomSheet extends BottomSheetDialogFragment {
+public class BottomSheet extends DialogFragment {
     public static final String TAG = "ActionBottomDialog";
     AdapterSheet adapter;
+    int style = DialogFragment.STYLE_NO_TITLE;
+    int theme = R.style.MyDialog;
     ArrayList<Integer> picList = new ArrayList<>();
 
 
@@ -38,7 +40,7 @@ public class BottomSheet extends BottomSheetDialogFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStyle(BottomSheetDialogFragment.STYLE_NORMAL, R.style.CustomBottomSheetDialogTheme);
+        setStyle(style, theme);
 
     }
 
